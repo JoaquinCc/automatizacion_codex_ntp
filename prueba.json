@@ -1,0 +1,1034 @@
+{
+  "collections": {
+    "reportes.log_comunicaciones": {
+      "ns": "reportes.log_comunicaciones",
+      "jsonSchema": {
+        "bsonType": "object",
+        "required": [
+          "_id",
+          "anio_ingreso",
+          "correlativo",
+          "dia_semana_ingreso_id",
+          "dia_semana_ingreso_nombre",
+          "mes_ingreso",
+          "servicio_id",
+          "tipo_comunicacion_id"
+        ],
+        "properties": {
+          "_id": {
+            "bsonType": "objectId",
+            "expanded": true
+          },
+          "agente_id": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "agente_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "alias_contacto": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "anio_fin_atencion": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "anio_ingreso": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "anio_inicio_atencion": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "arranque_id": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "callid": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "campana_id": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "campana_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "chan_id": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "codigo_atencion": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "cola_id": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "cola_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "comunicacion_id": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "contacto": {
+            "bsonType": "object",
+            "properties": {
+              "_id": {
+                "bsonType": "object",
+                "properties": {
+                  "date": {
+                    "bsonType": "string",
+                    "expanded": true
+                  },
+                  "timestamp": {
+                    "bsonType": "long",
+                    "expanded": true
+                  }
+                },
+                "required": [
+                  "date",
+                  "timestamp"
+                ],
+                "expanded": true
+              },
+              "campana": {
+                "bsonType": "long",
+                "expanded": true
+              },
+              "carga_id": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "chan_id": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "contacto_id": {
+                "bsonType": "long",
+                "expanded": true
+              },
+              "contacto_nombre": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "contacto_validado": {
+                "bsonType": "long",
+                "expanded": true
+              },
+              "correos": {
+                "bsonType": [
+                  "string",
+                  "array"
+                ],
+                "expanded": true
+              },
+              "departamento": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dirección": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "distrito": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "facebooks": {
+                "bsonType": "array",
+                "expanded": true
+              },
+              "fecha_creacion": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "fecha_modificacion": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "from_marcador": {
+                "bsonType": "bool",
+                "expanded": true
+              },
+              "id_campana": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "id_contacto": {
+                "bsonType": "long",
+                "expanded": true
+              },
+              "isDirty": {
+                "bsonType": "bool",
+                "expanded": true
+              },
+              "lote_id": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "nombre": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "nombre_base": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "nro_de_documento": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "numeros": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "otros_distritos": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "provincia": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "telefonos": {
+                "bsonType": "array",
+                "items": {
+                  "bsonType": "string"
+                },
+                "expanded": true
+              },
+              "tipo_campaña": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "tipo_de_campaña": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "twitters": {
+                "bsonType": "array",
+                "expanded": true
+              }
+            },
+            "required": [
+              "correos",
+              "departamento",
+              "dirección",
+              "distrito",
+              "id_contacto",
+              "nombre",
+              "nombre_base",
+              "nro_de_documento",
+              "provincia",
+              "telefonos"
+            ],
+            "expanded": true
+          },
+          "correlativo": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "detalle": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "object",
+              "properties": {
+                "comunicacion_id": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "fecha_fin": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "fecha_inicio": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "mensaje_entrante": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "nodo_id": {
+                  "bsonType": "long",
+                  "expanded": true
+                },
+                "nodo_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "respuesta_id": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "respuesta_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "tiempo": {
+                  "bsonType": "long",
+                  "expanded": true
+                },
+                "tipo_nodo": {
+                  "bsonType": "long",
+                  "expanded": true
+                }
+              },
+              "required": [
+                "comunicacion_id",
+                "fecha_fin",
+                "fecha_inicio",
+                "mensaje_entrante",
+                "nodo_id",
+                "nodo_nombre",
+                "respuesta_id",
+                "respuesta_nombre",
+                "tiempo",
+                "tipo_nodo"
+              ]
+            },
+            "expanded": false
+          },
+          "dia_semana_fin_atencion_id": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "dia_semana_fin_atencion_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "dia_semana_ingreso_id": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "dia_semana_ingreso_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "dia_semana_inicio_atencion_id": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "dia_semana_inicio_atencion_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "estado_atencion": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "etiqueta_id": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "etiqueta_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "extension": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "fecha_fin": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "fecha_fin_atencion": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "fecha_fin_atencion_index": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "fecha_fin_comunicacion": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "fecha_ingreso_cola": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "fecha_ingreso_cola_index": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "fecha_inicio": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "fecha_inicio_atencion": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "fecha_inicio_atencion_data_comparacion": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "fecha_inicio_atencion_index": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "fecha_inicio_comunicacion": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "fecha_inicio_comunicacion_index": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "fecha_primer_registro": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "fecha_primera_respuesta_agente": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "fin_timbrado_marcador": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "finalizada_por": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "gestion_unica": {
+            "bsonType": "bool",
+            "expanded": true
+          },
+          "gestiones": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "object",
+              "properties": {
+                "comentario": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "fecha_index": {
+                  "bsonType": [
+                    "date",
+                    "string"
+                  ],
+                  "expanded": true
+                },
+                "fecha_registro": {
+                  "bsonType": [
+                    "date",
+                    "string"
+                  ],
+                  "expanded": true
+                },
+                "fecha_string": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "hora_index": {
+                  "bsonType": [
+                    "int",
+                    "long"
+                  ],
+                  "expanded": true
+                },
+                "nivel1": {
+                  "bsonType": [
+                    "long",
+                    "int"
+                  ],
+                  "expanded": true
+                },
+                "nivel1_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "nivel2": {
+                  "bsonType": [
+                    "long",
+                    "int"
+                  ],
+                  "expanded": true
+                },
+                "nivel2_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "nivel3": {
+                  "bsonType": [
+                    "long",
+                    "int"
+                  ],
+                  "expanded": true
+                },
+                "nivel3_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "nivel4": {
+                  "bsonType": [
+                    "long",
+                    "int"
+                  ],
+                  "expanded": true
+                },
+                "nivel4_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "resultado_id": {
+                  "bsonType": "long",
+                  "expanded": true
+                },
+                "resultado_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "tema_id": {
+                  "bsonType": "long",
+                  "expanded": true
+                },
+                "tema_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                }
+              },
+              "required": [
+                "comentario",
+                "fecha_index",
+                "fecha_registro",
+                "hora_index",
+                "nivel1",
+                "nivel1_nombre",
+                "nivel2",
+                "nivel2_nombre",
+                "nivel3",
+                "nivel3_nombre",
+                "nivel4",
+                "nivel4_nombre",
+                "resultado_id",
+                "resultado_nombre",
+                "tema_id",
+                "tema_nombre"
+              ]
+            },
+            "expanded": true
+          },
+          "gestiones_old": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "object",
+              "properties": {
+                "comentario": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "fecha_index": {
+                  "bsonType": "date",
+                  "expanded": true
+                },
+                "fecha_registro": {
+                  "bsonType": "date",
+                  "expanded": true
+                },
+                "fecha_string": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "hora_index": {
+                  "bsonType": "int",
+                  "expanded": true
+                },
+                "nivel1": {
+                  "bsonType": "long",
+                  "expanded": true
+                },
+                "nivel1_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "nivel2": {
+                  "bsonType": [
+                    "long",
+                    "int"
+                  ],
+                  "expanded": true
+                },
+                "nivel2_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "nivel3": {
+                  "bsonType": "long",
+                  "expanded": true
+                },
+                "nivel3_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "nivel4": {
+                  "bsonType": "long",
+                  "expanded": true
+                },
+                "nivel4_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "resultado_id": {
+                  "bsonType": "long",
+                  "expanded": true
+                },
+                "resultado_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                },
+                "tema_id": {
+                  "bsonType": "long",
+                  "expanded": true
+                },
+                "tema_nombre": {
+                  "bsonType": "string",
+                  "expanded": true
+                }
+              },
+              "required": [
+                "comentario",
+                "fecha_index",
+                "fecha_registro",
+                "fecha_string",
+                "hora_index",
+                "nivel1",
+                "nivel1_nombre",
+                "nivel2",
+                "nivel2_nombre",
+                "nivel3",
+                "nivel3_nombre",
+                "nivel4",
+                "nivel4_nombre",
+                "resultado_id",
+                "resultado_nombre",
+                "tema_id",
+                "tema_nombre"
+              ]
+            },
+            "expanded": false
+          },
+          "hora_fin_atencion_index": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "hora_ingreso_cola_index": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "hora_inicio_atencion_index": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "hora_inicio_comunicacion_index": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "identificacion": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "inicio_timbrado_marcador": {
+            "bsonType": "date",
+            "expanded": true
+          },
+          "instancia": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "isMarcador": {
+            "bsonType": "bool",
+            "expanded": true
+          },
+          "lote_id": {
+            "bsonType": "long",
+            "expanded": true
+          },
+          "lote_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "marcador_info": {
+            "bsonType": "object",
+            "properties": {
+              "arranque_id": {
+                "bsonType": [
+                  "long",
+                  "string"
+                ],
+                "expanded": true
+              },
+              "chan_id": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "code": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato1": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato10": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato11": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato12": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato13": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato14": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato15": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato16": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato17": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato18": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato19": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato2": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato20": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato3": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato4": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato5": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato6": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato7": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato8": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "dato9": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "lote_id": {
+                "bsonType": [
+                  "long",
+                  "string"
+                ],
+                "expanded": true
+              },
+              "lote_nombre": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "nombre": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "numero": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "register_id": {
+                "bsonType": [
+                  "long",
+                  "string"
+                ],
+                "expanded": true
+              },
+              "resultado_id": {
+                "bsonType": "long",
+                "expanded": true
+              },
+              "sub_tipo_marcador_id": {
+                "bsonType": [
+                  "long",
+                  "string"
+                ],
+                "expanded": true
+              },
+              "sub_tipo_marcador_nombre": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "tipo_marcador_id": {
+                "bsonType": [
+                  "long",
+                  "string"
+                ],
+                "expanded": true
+              },
+              "tipo_marcador_nombre": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "tipo_numero": {
+                "bsonType": "string",
+                "expanded": true
+              },
+              "field-1": {
+                "bsonType": "string",
+                "expanded": true
+              }
+            },
+            "required": [
+              "arranque_id",
+              "chan_id",
+              "code",
+              "dato1",
+              "dato10",
+              "dato11",
+              "dato12",
+              "dato13",
+              "dato14",
+              "dato15",
+              "dato16",
+              "dato17",
+              "dato18",
+              "dato19",
+              "dato2",
+              "dato20",
+              "dato3",
+              "dato4",
+              "dato5",
+              "dato6",
+              "dato7",
+              "dato8",
+              "dato9",
+              "lote_id",
+              "lote_nombre",
+              "nombre",
+              "numero",
+              "register_id",
+              "sub_tipo_marcador_id",
+              "sub_tipo_marcador_nombre",
+              "tipo_marcador_id",
+              "tipo_marcador_nombre",
+              "tipo_numero"
+            ],
+            "expanded": false
+          },
+          "mes_fin_atencion": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "mes_ingreso": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "mes_inicio_atencion": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "nodo_id": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "nodo_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "nombre_sub_resultado": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "origen": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "proveedor_id": {
+            "bsonType": "long",
+            "expanded": true
+          },
+          "proveedor_nombre": {
+            "bsonType": [
+              "string",
+              "null"
+            ],
+            "expanded": true
+          },
+          "publicidad_id": {
+            "bsonType": "long",
+            "expanded": true
+          },
+          "publicidad_identificador": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "publicidad_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "realizado_tipificacion_obligatoria": {
+            "bsonType": "long",
+            "expanded": true
+          },
+          "resultado_id": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "resultado_marcador_id": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "resultado_marcador_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "servicio_id": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "servicio_secundario": {
+            "bsonType": "bool",
+            "expanded": true
+          },
+          "sip_code": {
+            "bsonType": [
+              "string",
+              "null"
+            ],
+            "expanded": true
+          },
+          "sub_resultado_id": {
+            "bsonType": "long",
+            "expanded": true
+          },
+          "sub_tipo_marcador_id": {
+            "bsonType": "long",
+            "expanded": true
+          },
+          "sub_tipo_marcador_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "supera_umbral": {
+            "bsonType": "bool",
+            "expanded": true
+          },
+          "tiempo": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "tiempo_atencion": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "tiempo_cola": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "tiempo_conversacion": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "tiempo_gestion": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "tiempo_ring": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "tiempo_ring_acumulado": {
+            "bsonType": "long",
+            "expanded": true
+          },
+          "tiempo_ring_agente": {
+            "bsonType": "long",
+            "expanded": true
+          },
+          "tiempo_timbrado_marcador": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "tipo_comunicacion_id": {
+            "bsonType": "int",
+            "expanded": true
+          },
+          "tipo_marcador_id": {
+            "bsonType": "long",
+            "expanded": true
+          },
+          "tipo_marcador_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "tipo_telefono_marcador": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "whatsapp_id": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "workflow_nombre": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "workflow_numero": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "field-1": {
+            "bsonType": "string",
+            "expanded": true
+          },
+          "field-2": {
+            "bsonType": "string"
+          }
+        }
+      }
+    }
+  },
+  "relationships": []
+}
