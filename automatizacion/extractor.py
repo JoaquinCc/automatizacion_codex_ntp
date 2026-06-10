@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from config import MONGO_URI, MONGO_DB, MONGO_COLLECTION, COLA_ID
+from config import MONGO_URI, MONGO_DB, MONGO_COLLECTION
 
 
 PROYECCION = {
@@ -33,8 +33,8 @@ PROYECCION = {
 }
 
 
-def extraer_documentos(hoy_inicio, hoy_fin):
-    """Conecta a MongoDB y extrae documentos de cola_id=43 para el rango de fecha."""
+def extraer_documentos(hoy_inicio, hoy_fin, cola_id: int):
+    """Conecta a MongoDB y extrae documentos del cola_id dado para el rango de fecha."""
     client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=8000)
 
     try:
@@ -47,7 +47,7 @@ def extraer_documentos(hoy_inicio, hoy_fin):
     col = client[MONGO_DB][MONGO_COLLECTION]
 
     filtro = {
-        "cola_id": COLA_ID,
+        "cola_id": cola_id,
         "fecha_inicio_comunicacion": {"$gte": hoy_inicio, "$lte": hoy_fin}
     }
 

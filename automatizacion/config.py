@@ -12,15 +12,18 @@ MONGO_DB         = "reportes"
 MONGO_COLLECTION = "log_comunicaciones"
 MONGO_URI        = f"mongodb://{MONGO_USER}:{MONGO_PASSWORD}@{MONGO_HOST}:27017/{MONGO_DB}"
 
-COLA_ID = 43
-
 # ── MariaDB ───────────────────────────────────────────────────────────────────
 DB_HOST     = "intranetpbx.net.pe"
 DB_PORT     = 33306
 DB_USER     = "biuser"
 DB_PASSWORD = "{b1us3r;3v0x}"
-DB_NAME     = "db_ntp_win_outbound"
 DB_TABLE    = "fact_comunicaciones"
+
+# ── Pipelines: cada entrada define una cola MongoDB y su base de datos destino ─
+PIPELINES = [
+    {"cola_id": 2,  "db_name": "db_ntp_pf_outbound"},
+    {"cola_id": 43, "db_name": "db_ntp_win_outbound"},
+]
 
 # ── Rango de fecha: hoy en hora Peru (UTC-5) ──────────────────────────────────
 def get_rango_hoy():

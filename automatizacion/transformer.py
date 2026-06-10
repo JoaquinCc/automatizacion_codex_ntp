@@ -82,9 +82,12 @@ def transformar(rows: list) -> pd.DataFrame:
     # ── Convertir campos numericos
     df["tipo_comunicacion_id"]    = pd.to_numeric(df["tipo_comunicacion_id"],    errors="coerce")
     df["tiempo_cola"]              = pd.to_numeric(df["tiempo_cola"],              errors="coerce")
+    df["tiempo_ring"]              = pd.to_numeric(df["tiempo_ring"],              errors="coerce")
+    df["tiempo_ring_agente"]       = pd.to_numeric(df["tiempo_ring_agente"],       errors="coerce")
     df["tiempo_ring_acumulado"]    = pd.to_numeric(df["tiempo_ring_acumulado"],    errors="coerce")
     df["tiempo_conversacion"]      = pd.to_numeric(df["tiempo_conversacion"],      errors="coerce")
     df["tiempo_gestion"]           = pd.to_numeric(df["tiempo_gestion"],           errors="coerce")
+    df["tiempo_atencion"]          = pd.to_numeric(df["tiempo_atencion"],          errors="coerce")
     df["resultado_id"]             = pd.to_numeric(df["resultado_id"],             errors="coerce")
     df["tiempo_timbrado_marcador"] = pd.to_numeric(df["tiempo_timbrado_marcador"], errors="coerce")
 
@@ -105,9 +108,9 @@ def transformar(rows: list) -> pd.DataFrame:
     # ── hora_fin_atencion
     df["hora_fin_atencion"] = df.apply(calc_hora_fin_atencion, axis=1)
 
-    # ── Forzar int64 con fillna(0): tiempo_timbrado_marcador, tiempo_ring_acumulado, tiempo_espera
+    # ── Forzar int64 con fillna(0) para columnas NOT NULL en la BD
     ref_dtype = df["tiempo_conversacion"].dtype
-    for col in ["tiempo_timbrado_marcador", "tiempo_ring_acumulado", "tiempo_espera"]:
+    for col in ["tiempo_timbrado_marcador", "tiempo_ring", "tiempo_ring_agente", "tiempo_ring_acumulado", "tiempo_espera"]:
         df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0).astype(ref_dtype)
 
     # ── tramo_inicio (tramos de 30 min)

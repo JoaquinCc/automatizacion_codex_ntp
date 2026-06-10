@@ -4,14 +4,14 @@ import urllib.parse
 import pandas as pd
 from sqlalchemy import create_engine, text
 
-from config import DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME, DB_TABLE
+from config import DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_TABLE
 
 
-def cargar(df: pd.DataFrame) -> int:
-    """Inserta el DataFrame en MariaDB. Retorna el numero de filas insertadas."""
+def cargar(df: pd.DataFrame, fecha: str, db_name: str) -> int:
+    """Elimina registros existentes para la fecha dada e inserta el DataFrame en MariaDB."""
     pwd_encoded = urllib.parse.quote_plus(DB_PASSWORD)
     engine = create_engine(
-        f"mysql+pymysql://{DB_USER}:{pwd_encoded}@{DB_HOST}:{DB_PORT}/{DB_NAME}",
+        f"mysql+pymysql://{DB_USER}:{pwd_encoded}@{DB_HOST}:{DB_PORT}/{db_name}",
         connect_args={"charset": "utf8mb4"}
     )
 
@@ -21,6 +21,23 @@ def cargar(df: pd.DataFrame) -> int:
         print("Conexion MariaDB exitosa")
     except Exception as e:
         print(f"Error de conexion MariaDB: {e}")
+        raise
+
+    # Eliminar registros existentes para la fecha antes de insertar
+    try:
+        with engine.connect() as conn:
+            result = conn.execute(
+                text(f"DELETE FROM {DB_TABLE} WHERE fecha_inicio_comunicacion = :fecha"),
+                {"fecha": fecha}
+            )
+            conn.commit()
+            eliminados = result.rowcount
+            if eliminados > 0:
+                print(f"Eliminados {eliminados} registros existentes para la fecha {fecha}")
+            else:
+                print(f"Sin registros previos para la fecha {fecha}, se procedera a insertar")
+    except Exception as e:
+        print(f"Error al eliminar registros previos: {e}")
         raise
 
     df_insert = df.copy()
@@ -48,7 +65,7 @@ def cargar(df: pd.DataFrame) -> int:
             chunksize = 500,
             method    = "multi",
         )
-        print(f"Insercion exitosa: {len(df_insert)} filas insertadas en {DB_NAME}.{DB_TABLE}")
+        print(f"Insercion exitosa: {len(df_insert)} filas insertadas en {db_name}.{DB_TABLE}")
         return len(df_insert)
     except Exception as e:
         print(f"Error al insertar: {e}")
